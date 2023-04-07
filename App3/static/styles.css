@@ -8,7 +8,7 @@ body { background: #039a01 url(images/grass.jpg) repeat fixed; color: #363535; f
 
 #header { background: url(images/bg_header.jpg) no-repeat 0% 0%; width: 650px; height: 133px; }
 
-#header h1 { color: #d9ff00;; font: 24px/25px georgia, times new roman, times, serif; letter-spacing: 2px; padding: 50px 0 0 130px; }
+#header h1 { color: #d9ff00;; font: 25px/25px georgia, times new roman, times, serif; letter-spacing: 2px; padding: 50px 0 0 130px; }
 
 #leftcolumn { display: inline; width: 180px; float: left; }
 
