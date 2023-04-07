@@ -4,9 +4,9 @@ from PreEntrega3.views import *
 from App3 import *
 
 urlpatterns = [
-    path('', inicio),
-    path('equipos/', lista_equipos),
-    path('jugadores/', lista_jugadores),
-    path('representantes/', representantes),
-    path('agrega-jugador/<nombre>/<equipo>', agregar_jugador),
+    path('', inicio, name="inicio"),
+    path('equipos/', lista_equipos, name="equipos"),
+    path('jugadores/', lista_jugadores, name="jugadores"),
+    path('representantes/', representantes, name="representantes"),
+    path('agrega-jugador/<nombre>/<equipo>', agregar_jugador, name="equipo"),
 ]
