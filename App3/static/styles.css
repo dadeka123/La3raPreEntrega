@@ -4,10 +4,10 @@
 
 body { background: #039a01 url(images/grass.jpg) repeat fixed; color: #363535; font: normal 13px/18px verdana, arial, helvetica, sans-serif; margin-bottom: 10px; }
 
-#wrapper { background: url(images/bg.gif) repeat-y 0% 0%; border-bottom: 1px solid #151a11; margin: 0 auto; width: 653px; }
-
+#wrapper { background-color: #ffffff; height: 782px; margin: 0 auto; width: 650px; }
+  
 #header { background: url(images/bg_header.jpg) no-repeat 0% 0%; width: 650px; height: 133px; }
-
+  
 #header h1 { color: #d9ff00;; font: 25px/25px georgia, times new roman, times, serif; letter-spacing: 2px; padding: 50px 0 0 130px; }
 
 #leftcolumn { display: inline; width: 180px; float: left; }
