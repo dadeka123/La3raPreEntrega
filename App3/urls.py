@@ -8,5 +8,5 @@ urlpatterns = [
     path('equipos/', lista_equipos, name="equipos"),
     path('jugadores/', lista_jugadores, name="jugadores"),
     path('representantes/', representantes, name="representantes"),
-    path('agrega-jugador/<nombre>/<equipo>', agregar_jugador, name="equipo"),
+    path('agrega-jugador/<nombre>/<equipo>', agregar_jugador, name="agregar"),
 ]
