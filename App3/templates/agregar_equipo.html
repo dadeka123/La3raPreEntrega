@@ -5,15 +5,13 @@
 
 
 <div id="wrapper" style="padding-top: 15px;">
-    <h1>Hello World!</h1>
-    <p>This is some sample text.</p>
-    <h1>Hello World!</h1>
-    <p>This is some sample text.</p>
-    <h1>Hello World!</h1>
-    <p>This is some sample text.</p>
-    <h1>Hello World!</h1>
-    <p>This is some sample text.</p>
-  </div>
+  
+      <h1>Agregar equipo</h1>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+      </form>
     
 
 <div id="footer"> &copy; Copyright 2023 by Salvador Inetti | Design by Mamarracho Maker<br /></div>

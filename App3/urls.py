@@ -2,11 +2,11 @@ from django.contrib import admin
 from django.urls import path
 from PreEntrega3.views import *
 from App3 import *
+from .views import agregar_equipo
 
 urlpatterns = [
     path('', inicio, name="inicio"),
-    path('equipos/', lista_equipos, name="equipos"),
+    path('agregar-equipo/', agregar_equipo, name="agregar_equipo"),
     path('jugadores/', lista_jugadores, name="jugadores"),
     path('representantes/', representantes, name="representantes"),
-    path('agrega-jugador/<nombre>/<equipo>', agregar_jugador, name="agregar"),
 ]
