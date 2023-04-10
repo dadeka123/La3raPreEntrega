@@ -12,7 +12,7 @@ class Equipo(models.Model):
 
 
 class Jugador(models.Model):
-    
+
     posiciones = (
         ('g', 'Golero'),
         ('d', 'Defensa'),
@@ -22,7 +22,8 @@ class Jugador(models.Model):
 
     nombre = models.CharField(max_length=200)
     apellido = models.CharField(max_length=50)
-    edad = models.IntegerField(default=0)
+    lista_edades = [(i, str(i)) for i in range(1, 101)]
+    edad = models.IntegerField(choices=lista_edades, default=1)
     equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, related_name='jugadores')
     posicion = models.CharField(max_length=1, choices=posiciones)
     titular = models.BooleanField()
@@ -34,7 +35,7 @@ class Jugador(models.Model):
 class Representante(models.Model):
     
     nombre = models.CharField(max_length=100)
-    sitio_web = models.URLField()
+    sitio_web = models.CharField(max_length=100)
     jugadores_contratados = models.ManyToManyField(Jugador)
 
     def __str__(self):

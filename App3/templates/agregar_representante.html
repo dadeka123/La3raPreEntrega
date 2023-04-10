@@ -5,12 +5,12 @@
 
 <div id="wrapper" style="padding-top: 20px; position: relative;">
 
-  <h1 style="margin-bottom: 20px; color: yellow">Agregar Equipo</h1>
+  <h1 style="margin-bottom: 20px; color: yellow">Agregar Representante</h1>
  
   <form method="post" style="color: yellow; font-size: 16px;">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class="btn-lg">Enviar</button>
+    <button type="submit">Enviar</button>
 </form>
 
   <div id="footer" style="position: absolute; bottom: 0; width: 100%">

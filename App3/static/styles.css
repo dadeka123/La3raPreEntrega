@@ -12,6 +12,8 @@ body { background: #039a01 url(images/grass.jpg) repeat fixed; color: #363535; f
 
 #leftcolumn { display: inline; width: 180px; float: left; }
 
+.messages li { color: white; font-size: 18px; }
+  
 #maincolumn p { padding-bottom: 10px; }
 
 #footer { color: #e5f5e5; background-color: #336600; padding: 10px 0 15px 0; height: 30px; text-align: center; }
