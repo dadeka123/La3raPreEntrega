@@ -8,15 +8,20 @@
  <ul style="margin-left: 20px;">
     {% if representantes %}
 
-        {% for representante in representantes %}
-            <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
-                Nombre: {{ representante.nombre }}  <br>
-                Sitio web: {{ representante.sitio_web }}  <br>
-                Jugadores contratados: {{ representante.jugadores_contratados.all|join:", " }}
-            </li>    
+    {% for representante in representantes %}
+    <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
+        Nombre: {{ representante.nombre }}  <br>
+        Sitio web: {{ representante.sitio_web }}  <br>
+        Jugadores contratados:
+        <ul>
+        {% for jugador in representante.jugadores_contratados_nombre_apellido %}
+            <li>{{ jugador.0 }} {{ jugador.1 }}</li>
         {% endfor %}
-        
         </ul>
+    </li>    
+    {% endfor %}
+        
+    </ul>
     
     {% else %}
     

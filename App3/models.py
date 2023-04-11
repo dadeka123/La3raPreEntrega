@@ -33,12 +33,15 @@ class Jugador(models.Model):
         return f"Nombre: {self.nombre} {self.apellido} - Edad: {self.edad} - Equipo: {self.equipo.nombre_equipo} - Posición: {self.get_posicion_display()} - {titular_str}"
 
 class Representante(models.Model):
-    
     nombre = models.CharField(max_length=100)
     sitio_web = models.CharField(max_length=100)
     jugadores_contratados = models.ManyToManyField(Jugador)
 
     def __str__(self):
-        lista_jugadores = list(self.jugadores_contratados.all())
-        jugadoreslol = ", ".join(f"{jugador.nombre} {jugador.apellido}" for jugador in lista_jugadores)
-        return f"Nombre: {self.nombre} - Página web: {self.sitio_web} - Jugadores contratados: {jugadoreslol}"
+        jugadores = self.jugadores_contratados_nombre_apellido()
+        jugadores_str = ", ".join([nombre + " " + apellido for nombre, apellido in jugadores])
+        return f"Nombre: {self.nombre} - Página web: {self.sitio_web} - Jugadores contratados: {jugadores_str}"
+
+    def jugadores_contratados_nombre_apellido(self):
+        return self.jugadores_contratados.all().values_list('nombre', 'apellido')
+

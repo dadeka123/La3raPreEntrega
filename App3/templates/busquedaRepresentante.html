@@ -5,11 +5,11 @@
 
 <div id="wrapper" style="padding-top: 20px; position: relative;">
  
-  <form action="{% url 'BuscarRepresentante' %}" method="GET">{% csrf_token %}
-    <p><input type="text" name="nombre" id="nombre"></p>
+  <form method="get" action="{% url 'BuscarRepresentante' %}">
+    <input type="text" name="nombre_representante" placeholder="Nombre del representante">
+    <button type="submit">Buscar</button>
+</form>
 
-    <button type="submit">Buscar Representante</button>
-  </form>
 
   <div id="footer" style="position: absolute; bottom: 0; width: 100%">
     &copy; Copyright 2023 by Salvador Inetti |

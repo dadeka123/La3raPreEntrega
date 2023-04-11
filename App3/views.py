@@ -83,11 +83,12 @@ def busquedaRepresentante(request):
 def buscarRepresentante(request):
     if request.GET.get("nombre_representante"):
         nombre_representante = request.GET.get("nombre_representante")
-        representantes = Equipo.objects.filter(nombre_representante=nombre_representante)
+        representantes = Representante.objects.filter(nombre=nombre_representante)
         if representantes:
             return render(request, "resultadoBusqueda3.html", {"representantes": representantes})
         else:
             mensaje_error = "No se encontró un representante con ese nombre."
             return render(request, "resultadoBusqueda3.html", {"mensaje_error": mensaje_error})
     else:
-        return render(request, "busquedaRepresentante.html")
+        form = RepresentanteForm()
+        return render(request, "busquedaRepresentante.html", {'form': form, 'errors': form.errors})
