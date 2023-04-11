@@ -6,13 +6,19 @@
 <div id="wrapper" style="padding-top: 15px; position: relative; min-height: 100%;">
     <p style="font-size: 24px; color: yellow; padding-top: 10px;">Resultado:</p>
  <ul style="margin-left: 20px;">
-    {% if equipos %}
+    {% if jugadores %}
 
-        {% for equipo in equipos %}
+        {% for jugador in jugadores %}
             <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
-                Nombre: {{ equipo.nombre_equipo }}  <br>
-                Región: {{ equipo.region }}  <br>
-                Fecha de fundación: {{ equipo.fecha_fundacion }}
+                Nombre: {{ jugador.nombre }} {{ jugador.apellido }}  <br>
+                Edad: {{ jugador.edad }} <br>
+                Equipo: {{ jugador.equipo.nombre_equipo }} <br>
+                Posición: {{ jugador.get_posicion_display }} <br>
+                {% if jugador.titular %}
+                    Titular
+                {% else %}
+                    Suplente
+                {% endif %}
             </li>    
         {% endfor %}
         
@@ -21,7 +27,7 @@
     {% else %}
     
     <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
-        No se encontro un equipo con ese nombre.
+        No se encontró un jugador con ese nombre.
     </li>
     </ul>
     
@@ -33,4 +39,4 @@
         
 </div>
 
-{% endblock contenidoQueCambia %}
+{% endblock contenidoQueCambia %} 

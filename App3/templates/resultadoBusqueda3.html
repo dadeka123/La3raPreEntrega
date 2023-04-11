@@ -6,13 +6,13 @@
 <div id="wrapper" style="padding-top: 15px; position: relative; min-height: 100%;">
     <p style="font-size: 24px; color: yellow; padding-top: 10px;">Resultado:</p>
  <ul style="margin-left: 20px;">
-    {% if equipos %}
+    {% if representantes %}
 
-        {% for equipo in equipos %}
+        {% for representante in representantes %}
             <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
-                Nombre: {{ equipo.nombre_equipo }}  <br>
-                Región: {{ equipo.region }}  <br>
-                Fecha de fundación: {{ equipo.fecha_fundacion }}
+                Nombre: {{ representante.nombre }}  <br>
+                Sitio web: {{ representante.sitio_web }}  <br>
+                Jugadores contratados: {{ representante.jugadores_contratados.all|join:", " }}
             </li>    
         {% endfor %}
         
@@ -21,7 +21,7 @@
     {% else %}
     
     <li style="font-size: 20px; color: yellow; padding-top: 10px; margin-bottom: 10px;">
-        No se encontro un equipo con ese nombre.
+        No se encontro un representante con ese nombre.
     </li>
     </ul>
     
